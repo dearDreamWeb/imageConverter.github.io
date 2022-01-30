@@ -17,7 +17,7 @@ git add -A
 git commit -m 'deploy'
 
 git remote remove origin
-git remote add origin hhttps://github.com/dearDreamWeb/imageConverter.github.io.git
+git remote add origin https://github.com/dearDreamWeb/imageConverter.github.io.git
 
 # 如果你要部署在 https://<USERNAME>.github.io
 git push -f origin   master:preview
