@@ -38,7 +38,7 @@ const canvasImage = (imgBase64Data: string) => {
   img.src = imgBase64Data;
   img.onload = () => {
     ctx.drawImage(img, 0, 0, canvasW, canvasH);
-    const dataUrl = canvas.toDataURL('image/x-icon')
+    // const dataUrl = canvas.toDataURL('image/x-icon')
 
     canvas.toBlob((blob) => {
       const linkDom = document.createElement("a");
