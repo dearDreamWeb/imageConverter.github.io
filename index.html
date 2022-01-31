@@ -6,19 +6,22 @@
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>在线png转icon</title>
-  <script type="module" crossorigin src="./assets/index.bd476ea5.js"></script>
-  <link rel="stylesheet" href="./assets/index.90b7f1e4.css">
+  <script type="module" crossorigin src="./assets/index.bbd67b73.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.00999e23.js">
+  <link rel="stylesheet" href="./assets/index.62c77111.css">
 </head>
 
 <body>
   <div id="app">
     <div class="operation">
-      <input type="file" accept="image/png" id="file" />
-      <canvas id="canvas" width="30" height="30"></canvas>
+      <input type="file" accept="image/png" id="file" multiple/>
+      <div id="file_wrap">
+        <p class="file_btn">选择文件</p>
+      </div>
+      <div class="preview">预览:</div>
+      <canvas id="canvas" width="100" height="100"></canvas>
     </div>
-    <ul class="down_list">
-
-    </ul>
+    <ul class="down_list"></ul>
   </div>
   
 </body>
