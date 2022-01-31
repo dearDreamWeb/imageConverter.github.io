@@ -1,5 +1,14 @@
 #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
+}
+
+#app .header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
 }
 
 .operation{
@@ -10,20 +19,30 @@
 
 .operation #file_wrap{
     display: flex;
+    align-items: center;
 }
 
 .operation #file_wrap .file_btn{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 9px 15px;
-    font-size: 12px;
-    border-radius: 3px;
+    padding: 8px 24px;
+    font-size: 14px;
+    border-radius: 4px;
     color: #fff;
     border-radius: 8px;
     background-color: #409eff;
     border: 1px solid #2e90f5;
     cursor: pointer;
+}
+
+.operation #file_wrap .file_name{
+    margin-left: 12px;
+    width: 300px;
+    color: #ccc;
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
 }
 
 .operation #file{
@@ -36,8 +55,20 @@
 }
 
 .operation .preview {
+    display: flex;
+    align-items: center;
     margin: 12px 0;
-    font-size: 24px;
+    font-size: 20px;
+}
+
+.operation .preview #canvas{
+    margin-left: 12px;
+}
+
+.converter_text{
+    padding-top: 12px;
+    font-size: 20px;
+    border-top: 1px solid #ccc;
 }
 
 .down_list{
@@ -45,7 +76,6 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 320px;
     background-color: #d9ecff;
     border-radius: 8px;
     overflow: hidden;

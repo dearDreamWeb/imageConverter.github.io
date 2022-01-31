@@ -5,9 +5,10 @@ import './css/index.css';
 const file: HTMLInputElement = document.querySelector('#file')!;
 const canvas: HTMLCanvasElement = document.querySelector('#canvas')!;
 const downListDom: HTMLUListElement = document.querySelector('.down_list')!;
-const fileBtn:HTMLElement = document.querySelector('.file_btn')!;
+const fileBtn: HTMLElement = document.querySelector('.file_btn')!;
+const fileText: HTMLElement = document.querySelector('.file_name')!;
 
-fileBtn.onclick = ()=>{
+fileBtn.onclick = () => {
   file.click()
 }
 //创建文件读取相关的变量  
@@ -23,13 +24,15 @@ const uploadFile: () => Promise<string> = () => {
   return new Promise((resolve) => {
     const fileData = file.files![0];
     const lastIndex = file.files![0].name.lastIndexOf('.');
-    const name = file.files![0].name.slice(0,lastIndex);
+    const name = file.files![0].name.slice(0, lastIndex);
     fileName = fnv.hash(name).hex()
     //创建读取文件的对象  
     const reader = new FileReader();
     reader.onload = function (e) {
       const imgFile = e.target!.result as string;
       resolve(imgFile);
+      fileText.innerHTML = name;
+      fileText.title = name;
     };
     //正式读取文件  
     reader.readAsDataURL(fileData);
@@ -40,6 +43,7 @@ const canvasImage = (imgBase64Data: string) => {
   const ctx = canvas.getContext('2d')!;
   const canvasW = canvas.width;
   const canvasH = canvas.height;
+  ctx.clearRect(0, 0, canvasW, canvasH);
   const img = new Image();
   img.src = imgBase64Data;
   img.onload = () => {
