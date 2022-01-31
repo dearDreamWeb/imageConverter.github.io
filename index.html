@@ -3,25 +3,36 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
+  <link rel="icon" href="./assets/favicon.b8a28684.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>在线png转icon</title>
-  <script type="module" crossorigin src="./assets/index.bbd67b73.js"></script>
+  <script type="module" crossorigin src="./assets/index.b5a030c0.js"></script>
   <link rel="modulepreload" href="./assets/vendor.00999e23.js">
-  <link rel="stylesheet" href="./assets/index.62c77111.css">
+  <link rel="stylesheet" href="./assets/index.ae9f48a2.css">
 </head>
 
 <body>
   <div id="app">
-    <div class="operation">
-      <input type="file" accept="image/png" id="file" multiple/>
-      <div id="file_wrap">
-        <p class="file_btn">选择文件</p>
+    <div>
+      <h1 class="header">
+        <img src="./assets/favicon.b8a28684.ico" />
+        猴子转换器：PNG转ICO
+      </h1>
+      <div class="operation">
+        <input type="file" accept="image/png" id="file" multiple />
+        <div id="file_wrap">
+          <p class="file_btn">选择文件</p>
+          <p class="file_name">未选择文件</p>
+        </div>
+        <div class="preview">
+          预览:
+          <canvas id="canvas" width="100" height="100"></canvas>
+        </div>
+
       </div>
-      <div class="preview">预览:</div>
-      <canvas id="canvas" width="100" height="100"></canvas>
+      <div class="converter_text">转换结果:</div>
+      <ul class="down_list"></ul>
     </div>
-    <ul class="down_list"></ul>
   </div>
   
 </body>
